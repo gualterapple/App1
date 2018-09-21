@@ -1,33 +1,17 @@
-﻿using System;
-using App1.Views;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace App1
+﻿using SQLite;
+using System;
+namespace App1.Models
 {
-    public partial class App : Application
+    public class Company
     {
-        public App()
-        {
-            InitializeComponent();
+        [PrimaryKey]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
 
-            MainPage = new NavigationPage(new HomePage());
-        }
-
-        protected override void OnStart()
+        public override string ToString()
         {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
+            return this.Name + "(" + this.Address + ")";
         }
     }
 }

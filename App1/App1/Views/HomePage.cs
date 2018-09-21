@@ -32,7 +32,7 @@ namespace App1.Views
 
         private async void Button_Get_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new GetAllCompaniesPage());
+            //await Navigation.PushAsync(new GetAllCompaniesPage());
         }
 
     }
